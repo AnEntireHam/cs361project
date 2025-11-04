@@ -23,9 +23,28 @@ app.get('/add', (_, res) => {
 	res.render('add', {});
 })
 
-app.post('/add', (req, res) => {
 
-	})
+app.post('/add', async (req, res) => {
+	// Bad practice, but OK for private web server
+	let title = req.body.title
+	let body = req.body.body
+	let tags = req.body.tags
+	let author = req.body.author
+	console.log(`title: ${title}\n body: ${body}\n tags: ${tags}\n author: ${author}`)
+
+	let data = await fs.readFile("./data.json", "utf-8");
+	data = JSON.parse(data)
+	data["cards"].push({
+		title: title,
+		body: body,
+		tags: tags,
+		author: author
+		});
+
+	await fs.writeFile("./data.json", 
+		JSON.stringify(data, null, 4), null, null);
+	res.redirect('/cards')
+});
 
 app.get('/cards', async (_, res) => {
 	try {
