@@ -1,6 +1,16 @@
 {
 	"cards": [
-		"Hey there!",
-		"How's it going?"
+		{
+			"title": "Pystring tip!",
+			"body": "use join!",
+			"tags": "python string",
+			"author": "me"
+		},
+		{
+			"title": "javastring tip!",
+			"body": "DON\"T use ==",
+			"tags": "java string",
+			"author": "me again"
+		}
 	]
 }

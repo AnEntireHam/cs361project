@@ -19,16 +19,21 @@ app.get('/', (_, res) => {
 	});
 })
 
+app.get('/add', (_, res) => {
+	res.render('add', {});
+})
+
+app.post('/add', (req, res) => {
+
+	})
+
 app.get('/cards', async (_, res) => {
 	try {
 
 		let data = await fs.readFile("./data.json", "utf-8");
 		data = JSON.parse(data)
 		data = data["cards"]
-		if (!data) {
-			data = {"cards": ["hey", "hi"]}
-		}
-		console.log(data)
+		console.log("Loaded data: " + data)
 		res.render('cards', {
 			cards: data
 		});
@@ -37,11 +42,6 @@ app.get('/cards', async (_, res) => {
 		res.status(500).send("Server error");
 		console.log(err)
 	}
-})
-
-app.get('/help', (_, res) => {
-	res.render('help', {
-	});
 })
 
 app.listen(port, () => {

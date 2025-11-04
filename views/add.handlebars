@@ -1,0 +1,12 @@
+<main>
+	<h2>Add a card</h2>
+	<p>Enter details:</p>
+	<form method="POST" action="?">
+		<input id="title" type="text" name="title">
+		<textarea id="body" name="body" rows="4" cols="60" maxlength="240" required></textarea>
+		<input id="tags" type="text" name="tags" maxlength="40">
+		<!-- Include author automatically if logged in -->
+		<button type="submit">Submit</button>
+	</form>
+
+</main>
