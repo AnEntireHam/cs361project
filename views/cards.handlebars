@@ -1,17 +1,16 @@
 <main>
 	<h2>Index cards</h2>
-	<p>Here they are!</p>
 	<ul class="cards_container">
 		{{#each cards}}
 			<li>
 				<h3>{{this.title}}</h3>
 				<p>{{this.body}}</p>
-				{{#if this.tags}}
-					<small>{{this.tags}}</small>
-				{{/if}}
-				{{#if this.author}}
-					<p>- {{this.author}}</p>
-				{{/if}}
+				<!-- {{#if this.tags}} -->
+				<!-- 	<small>{{this.tags}}</small> -->
+				<!-- {{/if}} -->
+				<!-- {{#if this.author}} -->
+				<!-- 	<p>- {{this.author}}</p> -->
+				<!-- {{/if}} -->
 			</li>
 		{{/each}}
 	</ul>
