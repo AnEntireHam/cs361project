@@ -4,7 +4,14 @@
 	<ul class="cards_container">
 		{{#each cards}}
 			<li>
-				{{this}}
+				<h3>{{this.title}}</h3>
+				<p>{{this.body}}</p>
+				{{#if this.tags}}
+					<small>{{this.tags}}</small>
+				{{/if}}
+				{{#if this.author}}
+					<p>- {{this.author}}</p>
+				{{/if}}
 			</li>
 		{{/each}}
 	</ul>
